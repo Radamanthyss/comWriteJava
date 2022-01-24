@@ -25,8 +25,8 @@ class Escreve {
 
     public void roda() throws InterruptedException {
         try {
+	    //TEST GIT
             port.openPort();
-//            port.setParams(BAUDRATE_4800, DATABITS_8, STOPBITS_1, PARITY_NONE);
             port.setParams(4800, 8, 1, 0); // alternate technique
             
             
