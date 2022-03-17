@@ -9,7 +9,7 @@ package escrevecom;
  *
  * @author Bruno
  */
-public class EscreveCom {
+public class Main {
 
     /**
      * @param args the command line arguments
@@ -17,7 +17,7 @@ public class EscreveCom {
     public static void main(String[] args) throws InterruptedException {
 
         Escreve e = new Escreve();
-        e.roda();
+        e.roda();        
 
     }
 

@@ -20,24 +20,25 @@ class Escreve {
     SerialPort port;
 
     public Escreve() {
-        port = new SerialPort("COM1");
+        port = new SerialPort("COM2");
     }
 
     public void roda() throws InterruptedException {
         try {
-	    //TEST GIT
             port.openPort();
             port.setParams(4800, 8, 1, 0); // alternate technique
-            
-            
-            for (int i = 0; i <= 550; i++) {
-                port.writeString("i0  00000099000");
+
+            for (int i = 0; i <= 180; i++) {
+//                port.writeString("i0  00000099000");
+//                port.writeString("St 34,00  00000000500/n");
+                port.writeBytes("St 34,00  00000000500".getBytes());//Write data to port
                 TimeUnit.MILLISECONDS.sleep(300);
             }
+
             System.out.println("end");
             port.closePort();
         } catch (SerialPortException ex) {
-            Logger.getLogger(EscreveCom.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
